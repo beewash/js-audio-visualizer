@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Audio Visualizer</title>
+
+	<script type="text/javascript" src="script.js"></script>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		html, body {
+			overflow: hidden;
+		}
+		audio {
+			position: fixed;
+			left: 10px;
+			bottom: 10px;
+			width: calc(100% - 20px);
+		}
+	</style>
+</head>
+<body onload="initPage()">
+	<canvas id="renderer"></canvas>
+	<audio id="audio"></audio>
+</body>
+</html>
