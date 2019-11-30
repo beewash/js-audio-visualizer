@@ -3,17 +3,20 @@ var canvas, ctx, center_x, center_y, radius, bars, x_end, y_end, bar_height, bar
 bars = 200;
 bar_width = 2;
 
+	var x = new XMLHttpRequest();
+	x.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
 function initPage() {
 
     audio = document.getElementById("audio");
-	//audio = new Audio();
+	audio = new Audio();
 	context = new (window.AudioContext || window.webkitAudioContext) ();
 	analyser = context.createAnalyser();
 
-	audio.src = "https://cors-anywhere.herokuapp.com/https://soundcloud.com/gentttry/10999-1"; //the source path
-	audio.controls = true;
-    audio.loop = true;
-    audio.autoplay = true;
+	audio.src = "https://cors-anywhere.herokuapp.com/http://soundcloud.com/gentttry/10999-1"; //the source path
+	//audio.controls = true;
+    //audio.loop = true;
+    //audio.autoplay = true;
     audio.crossOrigin = "anonymous";
 	source = context.createMediaElementSource(audio);
 	source.connect(analyser);

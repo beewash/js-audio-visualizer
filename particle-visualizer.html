@@ -23,11 +23,13 @@
 		}
 	</style>
 </head>
-<body onload="initPage()">
+<body onclick="initPage()">
 	<canvas id="renderer"></canvas>
 	<!--https://www.kkhaydarov.com/audio-visualizer/-->
 
-	<audio id="audio" controls autoplay loop preload="metadata">
+	<audio id="audio" controls autoplay loop preload="auto">
+		<source src="https://cors-anywhere.herokuapp.com/http://soundcloud.com/gentttry/10999-1" type="audio/mpeg">
+	Your browser does not support the audio element.
 	</audio>
 
 	<button type="button" style="z-index:1;opacity:1;position: absolute;top:0;left:0;background: black, width: 50px;" id="btn"></button>
