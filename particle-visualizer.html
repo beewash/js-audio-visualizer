@@ -10,6 +10,7 @@
 		body {
 			margin: 0;
 			padding: 0;
+			position: relative;
 		}
 		html, body {
 			overflow: hidden;
@@ -24,6 +25,12 @@
 </head>
 <body onload="initPage()">
 	<canvas id="renderer"></canvas>
-	<audio id="audio"></audio>
+	<!--https://www.kkhaydarov.com/audio-visualizer/-->
+
+	<audio id="audio" controls autoplay loop preload="metadata">
+	</audio>
+
+	<button type="button" style="z-index:1;opacity:1;position: absolute;top:0;left:0;background: black, width: 50px;" id="btn"></button>
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 var canvas, ctx, center_x, center_y, radius, bars, x_end, y_end, bar_height, bar_width, frequency_array;
 
 bars = 200;
-bard_width = 2;
+bar_width = 2;
 
 function initPage() {
 
@@ -13,6 +13,7 @@ function initPage() {
 	audio.src = "https://cors-anywhere.herokuapp.com/https://soundcloud.com/gentttry/10999-1"; //the source path
 	audio.controls = true;
     audio.loop = true;
+    audio.autoplay = true;
     audio.crossOrigin = "anonymous";
 	source = context.createMediaElementSource(audio);
 	source.connect(analyser);
@@ -20,12 +21,12 @@ function initPage() {
 
 	frequency_array = new Uint8Array(analyser.frequencyBinCount);
 
-
-document.querySelector('audio').addEventListener('click', function() {
-  context.resume().then(() => {
-    console.log('Playback resumed successfully');
-  });
-});
+	document.documentElement.addEventListener("load", function(){
+    	click = true;
+    	if (context.state !== 'running') {
+    		context.resume();
+    	}
+    });
 
 	audio.load();
 	audio.play();
