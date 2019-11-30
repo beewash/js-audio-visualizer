@@ -3,9 +3,6 @@ var canvas, ctx, center_x, center_y, radius, bars, x_end, y_end, bar_height, bar
 bars = 200;
 bar_width = 2;
 
-	var x = new XMLHttpRequest();
-	x.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-
 function initPage() {
 
     audio = document.getElementById("audio");
